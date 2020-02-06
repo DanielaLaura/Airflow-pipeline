@@ -1,0 +1,12 @@
+gcloud container node-pools create n1-standard-4-pool \
+   --project=[project_name] \
+   --cluster airflow_cluster \
+   --machine-type n1-standard-4 \
+   --num-nodes 0 \
+   --disk-size 100 \
+   --enable-autoscaling \
+   --max-nodes=4 \
+   --min-nodes=0 \
+   --zone europe-west1-b \
+   --node-taints=node-pool=n1-standard-4-pool:NoExecute \
+   --scopes [scopes]
